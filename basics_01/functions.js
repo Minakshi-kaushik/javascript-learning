@@ -71,3 +71,65 @@ const addTwo = function(num){//called expression...in JS variablws are very powe
 }
 
 addTwo(8);
+
+//hoisting if stored in expression cannot be used before declaration but in normal declaration it can be used before declaration
+
+//Arrow Function...This
+
+const user = {
+    username:"abc",
+    price: 999,
+
+    welcomeMessage:function(){
+        console.log(`${this.username},welcome towebsite.`)
+        console.log(this)//current context is object
+    }
+}
+
+user.welcomeMessage()
+user.username= "avh"
+user.welcomeMessage()
+
+
+console.log(this)//current context is empty object
+
+//in browser this is window
+
+
+// function one(){
+//     let username ="abc"
+//     console.log(this.username);//donot work will show undefined
+// }
+
+//arrow function
+const one=()=>{
+    let username ="abc"
+    console.log(this);//also donot work will show undefined
+}
+
+//()=>{} arrow function basic syntax
+
+
+// const addnum = (num1, num2)=>{
+//     return num1+num2
+// }
+
+//implicit return
+const addnum = (num1,num2)=> num1+num2
+//or
+const addtwo = (num1,num2)=> (num1+num2)
+
+//to return object
+const add = () => ({user:"name"}) //donot use curly braces
+
+//Immediately Invoked Function Expression (IIFE)
+
+(function two(){
+    let username ="abc"
+    console.log(this);//also donot work will show undefined
+})();//synatx of IIFE...first ()is function definitiion ...()is fucntion call...used to save fucntion from global pollution..to end use ;
+
+((name)=>{
+    console.log(`User name is ${name}`)
+})('abc');
+

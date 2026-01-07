@@ -1,0 +1,23 @@
+//Javascript executionn context
+//in two context
+//first {}-> global execution context
+//next function execution context
+//eval execution context
+
+
+{}two phases-> first memory creation phases
+2nd execution phases
+
+
+1. global execution-> this
+2.Memory phase  val1 <- undefined
+  function ->definition
+
+  this is called first cycle
+3. execution phase ->values assigned
+   val1<-10
+   val2<-3
+   addNum<-    new variable Environment+execution thread(memory phase-> execution phase->retrunt o global execution->delete)
+
+   .........Call Stacks..........
+   
