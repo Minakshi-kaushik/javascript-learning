@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+
+    <script>
+       /* const product = {
+            name: 'Laptop',
+            price: '12000',
+        };
+        console.log(product);
+        console.log(product.name);
+        product.name = 'Predator';
+        product.user = 'Owner';
+        delete product.user;
+
+       console.log(product.user) ;//will give undefined value
+       */
+
+       /*
+       const prod2 = {
+        name: 'Shirt',
+        ['deliver-time'] : '2-days',
+        ratings: {
+            stars: 4.5, 
+            count: 1000
+        },
+        fun: function(){
+            console.log('This is a function inside an object');
+        }
+       };
+       console.log(prod2.name);
+
+    //    or 
+    console.log(prod2['deliver-time']);
+    console.log(prod2.ratings.stars);
+    prod2.fun();
+    
+    // Built-in object -> JSON 
+    //JSON.stringify() -> converts object to string
+    console.log(JSON.stringify(prod2));
+
+    // JSON.parse() -> converts string to object
+    const jsonstring = JSON.stringify(prod2);
+    const obj = JSON.parse(jsonstring);
+    console.log(obj);
+    */
+
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+    
+    const obj1 = {message: 'hello'};
+
+    const obj2 = obj1; //stores by reference
+
+    obj2.message = 'hi';//also changes obj1.message to 'hi' because both obj1 and obj2 point to the same object in memory
+
+    // cannot compare objects using === or == because they are stored by reference
+    console.log(obj1 === obj2); //true
+    const obj3 = {message: 'hi'};
+    console.log(obj1 === obj3); //false because they are different objects in memory
+
+
+    const obj4 = {message: 'hi'};
+   const {message} = obj4; //destructuring-> takes properties from an object and assigns them to variables
+   console.log(message); //hi
+   function method(){
+    console.log('hello');
+   }
+
+   const obj5 = {message, method}; //shorthand property names-> if the variable name is the same as the property name, we can just write the variable name};
+    </script>
+    
+</body>
+</html>

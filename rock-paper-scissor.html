@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock-Paper-Scissors</title>
 </head>
 <body>
     <p>Rock Paper Scissors</p>
     <button id="rock" onclick="
-      palyGame('Rock');
+      playGame('Rock');
     ">Rock</button>
 
 
@@ -23,7 +23,20 @@
     ">Scissors</button>
 
 
+    <button onclick = ' 
+    score.wins = 0; score.losses = 0; score.ties = 0;
+    localStorage.removeItem("score");'
+    >Reset Score
+    </button>
+
+
     <script>
+
+      const score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
 
       function playGame(playerMove){
         const compMove = pickComputerMove();
@@ -32,36 +45,48 @@
 
       if(playerMove === 'Scissors'){
             if(compMove === 'Rock'){
-            result = 'Lose';
+            result = 'You Lose';
           }else if(compMove === 'Paper'){
-            result = 'You win';
+            result = 'You Win';
           }else if(compMove === 'Scissors'){
             result = 'Tie';
           }
       }else if(playerMove === 'Paper'){
             if(compMove === 'Rock'){
-            result = 'Win';
+            result = 'You Win';
           }else if(compMove === 'Paper'){
             result = 'Tie';
           }else if(compMove === 'Scissors'){
-            result = 'Lose';
+            result = 'You Lose';
           }
-      }else if(playerMove === 'ROck'){
+      }else if(playerMove === 'Rock'){
           if(compMove === 'Rock'){
           result = 'Tie';
         }else if(compMove === 'Paper'){
           result = 'You Lose';
         }else if(compMove === 'Scissors'){
-          result = 'You win';
+          result = 'You Win';
         }
       }
 
-      
-      alert(`You picked ${playerMove}, computer picked ${compMove}. Result: ${result}`);
+      if(result === 'You Win'){
+        score.wins += 1;
+      }else if(result === 'You Lose'){
+        score.losses += 1;
+      }else if(result === 'Tie'){
+        score.ties +=1;
+      }
+
+      localStorage.setItem('score', JSON.stringify(score));
+
+      alert(`You picked ${playerMove}. Computer picked ${compMove}. Result: ${result}
+ Wins: ${score.wins}, Loses: ${score.losses}, Ties: ${score.ties}`);
 
       };
 
+      
 
+      
       // golbal variable to store computer move
     
 
