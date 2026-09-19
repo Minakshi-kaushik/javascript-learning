@@ -51,16 +51,39 @@
         }
             */
 
-        const todoList = [
-            "buy groceries",
-            "wash clothes",
-            "eat food"
-        ]
+        // const todoList = [
+        //     "buy groceries",
+        //     "wash clothes",
+        //     "eat food"
+        // ]
 
         // for(let index = 0; index <= todoList.length -1 ; index++){
         //     console.log(todoList[index]);
         // }
 
+//    arrays are reference
+        const array1 = [1,2,3];
+        const arr2 = array1.slice(); //now point to two different arrays
+        arr2.push(5);
+        console.log(array1);
+        console.log(arr2); //both are modified as both name point to same memory
+
+        //destructring
+
+        const [firstvalue, secondvalue] = [1,2,3,5];
+
+        
+
+        for(let i = 1; i < 10; i++){
+            if(i === 3){
+                continue;
+            }
+            if(i === 8){
+                break;
+
+            }
+            console.log(i);
+        }
 
         
     </script>

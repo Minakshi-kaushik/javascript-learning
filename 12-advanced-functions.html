@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>advanced function</title>
+</head>
+<body>
+
+    <button onclick="" class="js-button"></button>
+
+    <script>
+
+        //similar to onclick but allows to add multiple event listeners , also can remove eventListener using removeEventListener
+
+        const buttonElement = document.querySelector('.js-button');
+
+        const eventListener = ()=>{
+            console.log('click');
+        };
+
+
+        buttonElement.addEventListener('click', eventListener);
+
+        buttonElement.removeEventListener('click',eventListener );
+
+        /*
+        // this is shortcut for anonymous functions..advantage is this provides hoisting i.e we can call function before declararing it
+        function greetings(){
+            console.log('Hello');
+        }
+
+        greetings();
+
+        const num = 2;
+
+
+        ///functions are also values
+        // anonymous function
+        const function1 = function() {
+            console.log('Hellloo!!');
+
+        };
+
+        console.log(function1);
+        console.log(typeof function1);
+        function1();
+
+
+        const obj1 = {
+            num : 2,
+            fun : function() {
+                console.log('Hello3');
+            }
+        };
+        obj1.fun();
+
+        function display(param){
+            console.log(param);
+        }
+
+        display(2);
+
+        // passing functions in functions
+        function run(param){
+            param();
+        };
+        // the function we are passing is called callback function
+        run(function(){
+            console.log('Hello4');
+        });
+
+        // setTimeout is inbuilt function , takes 2 parameter-> 1. a callback fucntion 2. time in millisec to wait before calling that function
+
+        setTimeout(function(){
+            console.log('timeout');
+        }, 3000);  
+
+        //  above code is asynchronous code 
+        //console output will be first next line then print timeout -> cause it didnot wait for timeout to finish first. It set timer and move to next line of code(doesnot block code)
+        console.log('next line');
+
+
+        //setInterval-> same as setTimeout but it runs every three seconds
+        setInterval(function(){
+            console.log('interval');
+        }, 3000);
+
+        //another method to loop through array
+        [
+            'make dinner',
+            'wash dishes',
+            'do painting'
+        ].forEach(function(value, index){
+            console.log(index);
+            console.log(value);
+        });
+
+        // arrow functions -> similar to regular fucntion but uses => rather than 'function'
+        const arrowFunction = (param) => {
+            console.log('hello');
+        };
+        arrowFunction();
+
+        // shortcuts that arrow fucntions have but regular functions don't have
+
+        const oneparam = param =>{
+            console.log('one param');
+        };
+
+        oneparam(2);//if only one parameter than paranthesis  are optional
+
+
+        const oneLine = () => 2+3;
+        console.log(oneLine()); //if only one line than {} & return are optional to write
+
+
+        const obj2 = {
+            method : () => {
+
+            },
+            //or
+            method(){
+
+            }
+        }
+
+        */
+    </script>
+    
+</body>
+</html>
